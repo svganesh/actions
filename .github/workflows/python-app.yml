@@ -36,4 +36,4 @@ jobs:
     - name: Test with pytest
       run: |
         export PYTHONPATH=src
-        python run_test.py
+        python main/run_test.py
