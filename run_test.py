@@ -1,6 +1,6 @@
 import os
 
-print("World Hello")
+print("Hello world")
 print(os.environ['GITHUB_WORKFLOW'])
 print(os.environ['GITHUB_ACTOR'])
 print(os.environ['GITHUB_REPOSITORY'])
