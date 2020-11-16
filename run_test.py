@@ -1,4 +1,5 @@
 import os
+from subprocess import check_output
 
 print("Hello world")
 print(os.environ['GITHUB_WORKFLOW'])
@@ -13,4 +14,10 @@ print(os.environ['GITHUB_HEAD_REF'])
 print(os.environ['GITHUB_BASE_REF'])
 print(os.environ['GITHUB_WORKSPACE'])
 print(os.environ['GITHUB_SHA'])
+diff_str = (
+        check_output(["git", "diff", "-D", "main"])
+            .decode("utf-8")
+            .splitlines()
+    )
+print(diff_str)
 
