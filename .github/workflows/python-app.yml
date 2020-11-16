@@ -18,6 +18,11 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: main
+    - name: Checkout private tools
+      uses: actions/checkout@v2
+      with:
+        repository: svganesh/mini-projects-while-learning-python
+        path: my-tools
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
