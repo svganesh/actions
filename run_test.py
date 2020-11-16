@@ -15,7 +15,7 @@ print(os.environ['GITHUB_BASE_REF'])
 print(os.environ['GITHUB_WORKSPACE'])
 print(os.environ['GITHUB_SHA'])
 diff_str = (
-        check_output(["git", "diff", "-D", "origin/main", os.environ['GITHUB_HEAD_REF']])
+        check_output(["git", "diff", "-D", "main", os.environ['GITHUB_HEAD_REF']])
             .decode("utf-8")
             .splitlines()
     )
