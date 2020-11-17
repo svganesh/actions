@@ -16,7 +16,6 @@ print(os.environ['GITHUB_WORKSPACE'])
 print(os.environ['GITHUB_SHA'])
 diff_str = (
         subprocess.check_output(["diff", "main", "my-tools"] ,stderr=subprocess.STDOUT, shell=True)
-            .decode("utf-8")
             .splitlines()
     )
 print(diff_str)
