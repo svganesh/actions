@@ -14,10 +14,4 @@ print(os.environ['GITHUB_HEAD_REF'])
 print(os.environ['GITHUB_BASE_REF'])
 print(os.environ['GITHUB_WORKSPACE'])
 print(os.environ['GITHUB_SHA'])
-diff_str = (
-        check_output(["diff -c /main /my-tools"])
-            .decode("utf-8")
-            .splitlines()
-    )
-print(diff_str)
 
