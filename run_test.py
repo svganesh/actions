@@ -1,5 +1,5 @@
 import os
-from subprocess import check_output
+import subprocess
 
 print("Hello world")
 print(os.environ['GITHUB_WORKFLOW'])
@@ -15,7 +15,7 @@ print(os.environ['GITHUB_BASE_REF'])
 print(os.environ['GITHUB_WORKSPACE'])
 print(os.environ['GITHUB_SHA'])
 diff_str = (
-        check_output(["diff", "main", "my-tools"])
+        subprocess.check_output(["diff", "main", "my-tools"] ,stderr=subprocess.STDOUT)
             .decode("utf-8")
             .splitlines()
     )
