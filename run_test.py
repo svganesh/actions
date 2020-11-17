@@ -14,6 +14,11 @@ print(os.environ['GITHUB_HEAD_REF'])
 print(os.environ['GITHUB_BASE_REF'])
 print(os.environ['GITHUB_WORKSPACE'])
 print(os.environ['GITHUB_SHA'])
-diff_str = subprocess.check_output(["diff", "main", "my-tools"] ,stderr=subprocess.STDOUT, shell=True).decode("utf-8").splitlines()
+
+output = None
+try:
+    diff_str = subprocess.check_output(["diff", "main", "my-tools"] ,stderr=subprocess.STDOUT, shell=True).decode("utf-8").splitlines()
+except subprocess.CalledProcessError as e:
+    diff_str = e.output
 print(diff_str)
 
