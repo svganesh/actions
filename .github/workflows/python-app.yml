@@ -17,7 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        path: main
+        path: current
+    - uses: actions/checkout@v2
+      with:
+        ref: main
+        path: main        
     - name: Checkout private tools
       uses: actions/checkout@v2
       with:
