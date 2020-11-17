@@ -17,8 +17,8 @@ print(os.environ['GITHUB_SHA'])
 
 output = None
 try:
-    diff_str = subprocess.check_output(["diff", "main", "my-tools"] ,stderr=subprocess.STDOUT, shell=True).decode("utf-8").splitlines()
-except subprocess.CalledProcessError as e:
-    diff_str = e.output
+    diff_str = os.system("diff main my-tools").decode("utf-8").splitlines()
+except Exception as e:
+    diff_str = None
 print(diff_str)
 
