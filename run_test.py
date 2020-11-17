@@ -18,7 +18,7 @@ print(os.environ['GITHUB_SHA'])
 output = None
 git_diff = None
 try:
-    diff_str = os.system("diff -ruN main current").decode("utf-8").splitlines()
+    diff_str = os.system("diff --exclude=.git -ruN main current").decode("utf-8").splitlines()
 except Exception as e:
     diff_str = None
 print(diff_str)
